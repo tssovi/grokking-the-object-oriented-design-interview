@@ -25,7 +25,7 @@
     <br />
     <a href="object-oriented-design-case-studies/design-a-parking-lot.md"><b>Design a Parking Lot</b></a>
     <br />
-    <a href="object-oriented-design-case-studies/"><b>Design Amazon - Online Shopping System</b></a>
+    <a href="object-oriented-design-case-studies/design-amazon-online-shopping-system.md"><b>Design Amazon - Online Shopping System</b></a>
     <br />
     <a href="object-oriented-design-case-studies/"><b>Design Stack Overflow</b></a>
     <br />

@@ -6,7 +6,7 @@
 * [System Requirements](#system-requirements)
 * [Use Case Diagram](#use-case-diagram)
 * [Class Diagram](#class-diagram)
-* [Activity Diagrams](#activity-diagrams)
+* [Activity Diagram](#activity-diagram)
 * [Code](#code)
 
 A parking lot or car park is a dedicated cleared area that is intended for parking vehicles. In most countries where cars are a major mode of transportation, parking lots are a feature of every city and suburban area. Shopping malls, sports stadiums, megachurches, and similar venues often feature parking lots over large areas.
@@ -123,7 +123,7 @@ Here are the main classes of our Parking Lot System:
     UML for Parking Lot
 </p>
 
-### Activity Diagrams
+### Activity Diagram
 
 **Customer paying for parking ticket:** Any customer can perform this activity. Here are the set of steps:
 

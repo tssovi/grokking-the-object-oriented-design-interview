@@ -25,29 +25,17 @@ Users of Stack Overflow can earn reputation points and badges. For example, a pe
 We will be designing a system with the following requirements:
 
 1. Any non-member (guest) can search and view questions. However, to add or upvote a question, they have to become a member.
-
 2. Members should be able to post new questions.
-
 3. Members should be able to add an answer to an open question.
-
 4. Members can add comments to any question or answer.
-
 5. A member can upvote a question, answer or comment.
-
 6. Members can flag a question, answer or comment, for serious problems or moderator attention.
-
 7. Any member can add a [bounty](https://stackoverflow.com/help/bounty) to their question to draw attention.
-
 8. Members will earn [badges](https://stackoverflow.com/help/badges) for being helpful.
-
 9. Members can vote to [close](https://stackoverflow.com/help/closed-questions) a question; Moderators can close or reopen any question.
-
 10. Members can add [tags](https://stackoverflow.com/help/tagging) to their questions. A tag is a word or phrase that describes the topic of the question.
-
 11. Members can vote to [delete](https://stackoverflow.com/help/deleted-questions) extremely off-topic or very low-quality questions.
-
 12. Moderators can close a question or undelete an already deleted question.
-
 13. The system should also be able to identify most frequently used tags in the questions.
 
 ### Use Case Diagram
@@ -55,25 +43,17 @@ We will be designing a system with the following requirements:
 We have five main actors in our system:
 
 * **Admin:** Mainly responsible for blocking or unblocking members.
-
 * **Guest:** All guests can search and view questions.
-
 * **Member:** Members can perform all activities that guests can, in addition to which they can add/remove questions, answers, and comments. Members can delete and un-delete their questions, answers or comments.
-
 * **Moderator:** In addition to all the activities that members can perform, moderators can close/delete/undelete any question.
-
 * **System:** Mainly responsible for sending notifications and assigning badges to members.
 
 Here are the top use cases for Stack Overflow:
 
 1. Search questions.
-
 2. Create a new question with bounty and tags.
-
 3. Add/modify answers to questions.
-
 4. Add comments to questions or answers.
-
 5. Moderators can close, delete, and un-delete any question.
 
 <p align="center">
@@ -87,21 +67,13 @@ Here are the top use cases for Stack Overflow:
 Here are the main classes of Stack Overflow System:
 
 * **Question:** This class is the central part of our system. It has attributes like Title and Description to define the question. In addition to this, we will track the number of times a question has been viewed or voted on. We should also track the status of a question, as well as closing remarks if the question is closed.
-
 * **Answer:** The most important attributes of any answer will be the text and the view count. In addition to that, we will also track the number of times an answer is voted on or flagged. We should also track if the question owner has accepted an answer.
-
 * **Comment:** Similar to answer, comments will have text, and view, vote, and flag counts. Members can add comments to questions and answers.
-
 * **Tag:** Tags will be identified by their names and will have a field for a description to define them. We will also track daily and weekly frequencies at which tags are associated with questions.
-
 * **Badge:** Similar to tags, badges will have a name and description.
-
 * **Photo:** Questions or answers can have photos.
-
 * **Bounty:** Each member, while asking a question, can place a bounty to draw attention. Bounties will have a total reputation and an expiry date.
-
 * **Account:** We will have four types of accounts in the system, guest, member, admin, and moderator. Guests can search and view questions. Members can ask questions and earn reputation by answering questions and from bounties.
-
 * **Notification:** This class will be responsible for sending notifications to members and assigning badges to members based on their reputations.
 
 <p align="center">

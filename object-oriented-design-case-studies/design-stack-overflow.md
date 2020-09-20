@@ -100,6 +100,8 @@ Here are the main classes of Stack Overflow System:
 
 ### Sequence Diagram
 
+Following is the sequence diagram for creating a new question:
+
 <p align="center">
     <img src="/media-files/stack-overflow-sequence-diagram.svg" alt="Stack Overflow Sequence Diagram">
     <br />

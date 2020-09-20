@@ -31,7 +31,7 @@
     <br />
     <a href="object-oriented-design-case-studies/"><b>Design a Movie Ticket Booking System</b></a>
     <br />
-    <a href="object-oriented-design-case-studies/"><b>Design an ATM</b></a>
+    <a href="object-oriented-design-case-studies/design-an-atm.md"><b>Design an ATM</b></a>
     <br />
     <a href="object-oriented-design-case-studies/"><b>Design an Airline Management System</b></a>
     <br />

@@ -93,7 +93,7 @@ Here are the main classes of our Airline Management System:
 * **Reserve a ticket:** Any customer can perform this activity. Here are the steps to reserve a ticket:
 
 <p align="center">
-    <img src="/media-files/ams-reserve-ticket-activity-diagram.svg" alt="Airline Management System Reserve Ticket">
+    <img src="/media-files/ams-reserve-ticket-activity-diagram.svg" alt="Airline Management System Reserve Ticket Activity Diagram">
     <br />
     Activity Diagram for Airline Management System Reserve Ticket
 </p>
@@ -101,7 +101,7 @@ Here are the main classes of our Airline Management System:
 * **Cancel a reservation:** Any customer can perform this activity. Here are the set of steps to cancel a reservation:
 
 <p align="center">
-    <img src="/media-files/ams-cancel-reservation-activity-diagram.svg" alt="Airline Management System Cancel Reservation">
+    <img src="/media-files/ams-cancel-reservation-activity-diagram.svg" alt="Airline Management System Cancel Reservation Activity Diagram">
     <br />
     Activity Diagram for Airline Management System Cancel Reservation
 </p>

@@ -119,7 +119,7 @@ Here are the main classes of the ATM System:
 **Customer authentication:** Following is the activity diagram for a customer authenticating themselves to perform an ATM transaction:
 
 <p align="center">
-    <img src="/media-files/atm-cus-auth-activity-diagram.svg" alt="ATM Customer Authentication">
+    <img src="/media-files/atm-cus-auth-activity-diagram.svg" alt="ATM Customer Authentication Activity Diagram">
     <br />
     Activity Diagram for ATM Customer Authentication
 </p>
@@ -127,7 +127,7 @@ Here are the main classes of the ATM System:
 **Cash withdraw:** Following is the activity diagram for a user withdrawing cash:
 
 <p align="center">
-    <img src="/media-files/atm-withdraw-activity-diagram.svg" alt="ATM Cash Withdraw">
+    <img src="/media-files/atm-withdraw-activity-diagram.svg" alt="ATM Cash Withdraw Activity Diagram">
     <br />
     Activity Diagram for ATM Cash Withdraw
 </p>
@@ -135,7 +135,7 @@ Here are the main classes of the ATM System:
 **Deposit check:** Following is the activity diagram for the customer depositing a check:
 
 <p align="center">
-    <img src="/media-files/atm-deposit-activity-diagram.svg" alt="ATM Deposit Check">
+    <img src="/media-files/atm-deposit-activity-diagram.svg" alt="ATM Deposit Check Activity Diagram">
     <br />
     Activity Diagram for ATM Deposit Check
 </p>
@@ -143,7 +143,7 @@ Here are the main classes of the ATM System:
 **Fund transfer:** Following is the activity diagram for a user transferring funds to another account:
 
 <p align="center">
-    <img src="/media-files/atm-transfer-activity-diagram.png" alt="ATM Fund Transfer">
+    <img src="/media-files/atm-transfer-activity-diagram.png" alt="ATM Fund Transfer Activity Diagram">
     <br />
     Activity Diagram for ATM Fund Transfer
 </p>

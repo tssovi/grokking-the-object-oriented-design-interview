@@ -99,25 +99,25 @@ Here are the main classes of our Library Management System:
 **Check-out a book:** Any library member or librarian can perform this activity. Here are the set of steps to check-out a book:
 
 <p align="center">
-    <img src="/media-files/lib-check-out-book.svg" alt="Check-out Book">
+    <img src="/media-files/lib-check-out-book.svg" alt="Check-out Book Activity Diagram">
     <br />
-    Check-out Book Activity Diagram for Library Management System
+    Activity Diagram for Library Management System Check-out Book
 </p>
 
 **Return a book:** Any library member or librarian can perform this activity. The system will collect fines from members if they return books after the due date. Here are the steps for returning a book:
 
 <p align="center">
-    <img src="/media-files/lib-return-book.png" alt="Return Book">
+    <img src="/media-files/lib-return-book.png" alt="Return Book Activity Diagram">
     <br />
-    Return Book Activity Diagram for Library Management System
+    Activity Diagram for Library Management System Return Book
 </p>
 
 **Renew a book:** While renewing (re-issuing) a book, the system will check for fines and see if any other member has not reserved the same book, in that case the book item cannot be renewed. Here are the different steps for renewing a book:
 
 <p align="center">
-    <img src="/media-files/lib-renew-book.svg" alt="Renew Book">
+    <img src="/media-files/lib-renew-book.svg" alt="Renew Book Activity Diagram">
     <br />
-    Renew Book Activity Diagram for Library Management System
+    Activity Diagram for Library Management System Renew Book
 </p>
 
 ### Code

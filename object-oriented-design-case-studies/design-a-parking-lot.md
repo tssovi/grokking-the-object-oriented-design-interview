@@ -95,9 +95,9 @@ Here are the main classes of our Parking Lot System:
 **Customer paying for parking ticket:** Any customer can perform this activity. Here are the set of steps:
 
 <p align="center">
-    <img src="/media-files/parking-ticket.svg" alt="Parking Ticket">
+    <img src="/media-files/parking-ticket.svg" alt="Parking Ticket Activity Diagram">
     <br />
-    Parking TicketCheck-out Book Activity Diagram for Parking Lot
+    Activity Diagram for Parking Lot Parking Ticket
 </p>
 
 ### Code

@@ -114,7 +114,7 @@ Here are the main classes of our Blackjack game:
 <p align="center">
     <img src="/media-files/blackjack-class-diagram.svg" alt="Blackjack Class Diagram">
     <br />
-    Class Diagram for Airline Management System
+    Class Diagram for Blackjack
 </p>
 
 <p align="center">

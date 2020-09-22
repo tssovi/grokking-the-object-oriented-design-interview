@@ -6,7 +6,7 @@
 * [System Requirements](#system-requirements)
 * [Use Case Diagram](#use-case-diagram)
 * [Class Diagrams](#class-diagrams)
-* [Activity Diagram](#activity-diagram)
+* [Activity Diagrams](#activity-diagrams)
 * [Code](#code)
 
 A Hotel Management System is a software built to handle all online hotel activities easily and safely. This System will give the hotel management power and flexibility to manage the entire system from a single online portal. The system allows the manager to keep track of all the available rooms in the system as well as to book rooms and generate bills.
@@ -56,7 +56,7 @@ Here are the top use cases of the Hotel Management System:
 Here is the use case diagram of our Hotel Management System:
 
 <p align="center">
-    <img src="/media-files/hms-use-case-diagram.svg" alt="Blackjack Use Case Diagram">
+    <img src="/media-files/hms-use-case-diagram.svg" alt="Hotel Management System Use Case Diagram">
     <br />
     Use Case Diagram for Hotel Management System
 </p>

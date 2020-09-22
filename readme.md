@@ -37,7 +37,7 @@
     <br />
     <a href="object-oriented-design-case-studies/design-blackjack-and-a-deck-of-cards.md"><b>Design Blackjack and a Deck of Cards</b></a>
     <br />
-    <a href="object-oriented-design-case-studies/"><b>Design a Hotel Management System</b></a>
+    <a href="object-oriented-design-case-studies/design-a-hotel-management-system.md"><b>Design a Hotel Management System</b></a>
     <br />
     <a href="object-oriented-design-case-studies/"><b>Design a Restaurant Management system</b></a>
     <br />

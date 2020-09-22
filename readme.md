@@ -35,7 +35,7 @@
     <br />
     <a href="object-oriented-design-case-studies/design-an-airline-management-system.md"><b>Design an Airline Management System</b></a>
     <br />
-    <a href="object-oriented-design-case-studies/"><b>Design Blackjack and a Deck of Cards</b></a>
+    <a href="object-oriented-design-case-studies/design-blackjack-and-a-deck-of-cards.md"><b>Design Blackjack and a Deck of Cards</b></a>
     <br />
     <a href="object-oriented-design-case-studies/"><b>Design a Hotel Management System</b></a>
     <br />

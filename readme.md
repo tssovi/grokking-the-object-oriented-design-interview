@@ -39,7 +39,7 @@
     <br />
     <a href="object-oriented-design-case-studies/design-a-hotel-management-system.md"><b>Design a Hotel Management System</b></a>
     <br />
-    <a href="object-oriented-design-case-studies/"><b>Design a Restaurant Management system</b></a>
+    <a href="object-oriented-design-case-studies/design-a-restaurant-management-system.md"><b>Design a Restaurant Management system</b></a>
     <br />
     <a href="object-oriented-design-case-studies/"><b>Design Chess</b></a>
     <br />

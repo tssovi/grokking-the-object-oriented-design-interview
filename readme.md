@@ -33,7 +33,7 @@
     <br />
     <a href="object-oriented-design-case-studies/design-an-atm.md"><b>Design an ATM</b></a>
     <br />
-    <a href="object-oriented-design-case-studies/"><b>Design an Airline Management System</b></a>
+    <a href="object-oriented-design-case-studies/design-an-airline-management-system.md"><b>Design an Airline Management System</b></a>
     <br />
     <a href="object-oriented-design-case-studies/"><b>Design Blackjack and a Deck of Cards</b></a>
     <br />

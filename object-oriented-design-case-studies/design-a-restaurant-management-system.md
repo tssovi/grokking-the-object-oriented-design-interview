@@ -1,5 +1,5 @@
 <h1 align="center">Design a Restaurant Management System</h1>
-<h3 align="center">Let's design a restaurant management system</h3>
+<h3 align="center">Let's design a Restaurant Management System</h3>
 
 **We'll cover the following:**
 

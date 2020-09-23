@@ -1,5 +1,5 @@
 <h1 align="center">Design a Parking Lot</h1>
-<h3 align="center">Let's make an object-oriented design for a multi-floor parking lot.</h3>
+<h3 align="center">Let's make an object-oriented design for a multi-floor Parking Lot</h3>
 
 **We'll cover the following:**
 

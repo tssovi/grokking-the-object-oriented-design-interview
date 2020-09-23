@@ -1,5 +1,5 @@
 <h1 align="center">Design a Hotel Management System</h1>
-<h3 align="center">Let's design a hotel management system</h3>
+<h3 align="center">Let's design a Hotel Management System</h3>
 
 **We'll cover the following:**
 

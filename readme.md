@@ -1,5 +1,15 @@
 <h1 align="center">Grokking the Object Oriented Design Interview</h1>
 
+I create this repository as extended version of [Grokking the Object Oriented Design Interview](https://www.educative.io/courses/grokking-the-object-oriented-design-interview) this course. I add `example-codes` part for better understanding.
+
+### **Notes:**
+
+1. All codes excet OOP basics section are not executable.
+2. I use `Python` for coding demonstration.
+3. I try to write error free codes that's why in many class and function i just use `None` or `pass`
+4. For practice I left coding section empty of Facebook's `Extended Requirement` section.
+
+<hr/>
 <h3 align="center">Object-Oriented Design and UML</h3>
 <hr/>
 <p align="center">
@@ -53,4 +63,12 @@
     <br />
     <a href="object-oriented-design-case-studies/design-facebook.md"><b>Design Facebook - a Social Network</b></a>
 </p>
+<hr />
+
+### **Sources:**
+
+**Course Source:** [Grokking the Object Oriented Design Interview](https://www.educative.io/courses/grokking-the-object-oriented-design-interview)
+
+**Banner Photo Source:** [Dribbble](https://dribbble.com)
+
 <hr />

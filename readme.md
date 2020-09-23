@@ -67,8 +67,8 @@ I create this repository as extended version of [Grokking the Object Oriented De
 <h3 align="center">** Sources **</h3>
 <hr />
 <p align="center">
-    <a href="https://www.educative.io/courses/grokking-the-object-oriented-design-interview"><b>Course Source: Grokking the Object Oriented Design Interview</b></a>
+    <b>Course Source: <b/></b><a href="https://www.educative.io/courses/grokking-the-object-oriented-design-interview"><b>Grokking the Object Oriented Design Interview</b></a>
     <br />
-    <a href="https://dribbble.com"><b>Banner Photo Source: Dribbble</b></a>
+    <b>Banner Photo Source: <b/></b><a href="https://dribbble.com"><b>Dribbble</b></a>
 </p>
 <hr />

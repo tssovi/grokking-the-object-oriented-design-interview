@@ -51,6 +51,6 @@
     <br />
     <a href="object-oriented-design-case-studies/design-cricinfo.md"><b>Design Cricinfo</b></a>
     <br />
-    <a href="object-oriented-design-case-studies/"><b>Design Facebook - a Social Network</b></a>
+    <a href="object-oriented-design-case-studies/design-facebook.md"><b>Design Facebook - a Social Network</b></a>
 </p>
 <hr />

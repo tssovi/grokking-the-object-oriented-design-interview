@@ -49,7 +49,7 @@
     <br />
     <a href="object-oriented-design-case-studies/design-linkedin.md"><b>Design LinkedIn</b></a>
     <br />
-    <a href="object-oriented-design-case-studies/"><b>Design Cricinfo</b></a>
+    <a href="object-oriented-design-case-studies/design-cricinfo.md"><b>Design Cricinfo</b></a>
     <br />
     <a href="object-oriented-design-case-studies/"><b>Design Facebook - a Social Network</b></a>
 </p>

@@ -12,9 +12,9 @@
 Blackjack is the most widely played casino game in the world. It falls under the category of comparing-card games and is usually played between several players and a dealer. Each player, in turn, competes against the dealer, but players do not play against each other. In Blackjack, all players and the dealer try to build a hand that totals 21 points without going over. The hand closest to 21 wins.
 
 <p align="center">
-    <img src="/media-files/blackjack.png" alt="Airline Management System">
+    <img src="/media-files/blackjack.png" alt="Blackjack and a Deck of Cards">
     <br />
-    Airline Management System
+    Blackjack and a Deck of Cards
 </p>
 
 ### System Requirements

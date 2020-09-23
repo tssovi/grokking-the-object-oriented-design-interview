@@ -1,6 +1,6 @@
 <h1 align="center">Grokking the Object Oriented Design Interview</h1>
 
-I create this repository as extended version of [Grokking the Object Oriented Design Interview](https://www.educative.io/courses/grokking-the-object-oriented-design-interview) this course. I add `example-codes` part for better understanding.
+I create this repository as extended version of [Grokking the Object Oriented Design Interview](https://www.educative.io/courses/grokking-the-object-oriented-design-interview) course. I add `example-codes` part for better understanding.
 
 ### **Notes:**
 

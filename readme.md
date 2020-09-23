@@ -4,7 +4,7 @@ I create this repository as extended version of [Grokking the Object Oriented De
 
 ### **Notes:**
 
-1. All codes excet OOP basics section are not executable.
+1. All codes except OOP basics section are not executable.
 2. I use `Python` for coding demonstration.
 3. I try to write error free codes that's why in many class and function i just use `None` or `pass`
 4. For practice I left coding section empty of Facebook's `Extended Requirement` section.

@@ -90,7 +90,7 @@ Here are the main classes of our Airline Management System:
 
 ### Activity Diagrams
 
-* **Reserve a ticket:** Any customer can perform this activity. Here are the steps to reserve a ticket:
+**Reserve a ticket:** Any customer can perform this activity. Here are the steps to reserve a ticket:
 
 <p align="center">
     <img src="/media-files/ams-reserve-ticket-activity-diagram.svg" alt="Airline Management System Reserve Ticket Activity Diagram">

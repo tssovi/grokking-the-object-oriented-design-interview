@@ -47,7 +47,7 @@
     <br />
     <a href="object-oriented-design-case-studies/design-a-car-rental-system.md"><b>Design a Car Rental System</b></a>
     <br />
-    <a href="object-oriented-design-case-studies/"><b>Design LinkedIn</b></a>
+    <a href="object-oriented-design-case-studies/design-linkedin.md"><b>Design LinkedIn</b></a>
     <br />
     <a href="object-oriented-design-case-studies/"><b>Design Cricinfo</b></a>
     <br />

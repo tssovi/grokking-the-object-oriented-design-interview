@@ -41,7 +41,7 @@
     <br />
     <a href="object-oriented-design-case-studies/design-a-restaurant-management-system.md"><b>Design a Restaurant Management system</b></a>
     <br />
-    <a href="object-oriented-design-case-studies/"><b>Design Chess</b></a>
+    <a href="object-oriented-design-case-studies/design-chess.md"><b>Design Chess</b></a>
     <br />
     <a href="object-oriented-design-case-studies/"><b>Design an Online Stock Brokerage System</b></a>
     <br />

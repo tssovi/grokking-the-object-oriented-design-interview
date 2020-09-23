@@ -60,6 +60,8 @@ Here are the top use cases of the Library Management System:
 * **Renew a book:** To reborrow an already checked-out book.
 * **Return a book:** To return a book to the library which was issued to a member.
 
+Here is the use case diagram of our Library Management System:
+
 <p align="center">
     <img src="/media-files/lib-use-case-diagram.png" alt="Library Use Case Diagram">
     <br />

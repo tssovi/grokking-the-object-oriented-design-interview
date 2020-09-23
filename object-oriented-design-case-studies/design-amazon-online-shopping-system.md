@@ -53,6 +53,8 @@ Here are the top use cases of the Online Shopping System:
 6. Add a new product category.
 7. Send notifications to members with shipment updates.
 
+Here is the use case diagram of our Online Shopping System:
+
 <p align="center">
     <img src="/media-files/online-shopping-use-case.svg" alt="Online Shoopping System Use Case Diagram">
     <br />

@@ -54,6 +54,8 @@ Here are the top use cases for Parking Lot:
 * **Cash payment:** To pay the parking ticket through cash.
 * **Add/Modify parking rate:** To allow admin to add or modify the hourly parking rate.
 
+Here is the use case diagram of our Parking Lot:
+
 <p align="center">
     <img src="/media-files/parking-use-case-diagram.svg" alt="Parking Lot Use Case Diagram">
     <br />

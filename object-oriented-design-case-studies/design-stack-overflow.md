@@ -56,6 +56,8 @@ Here are the top use cases for Stack Overflow:
 4. Add comments to questions or answers.
 5. Moderators can close, delete, and un-delete any question.
 
+Here is the use case diagram of Stack Overflow:
+
 <p align="center">
     <img src="/media-files/stack-overflow-use-case.svg" alt="Stack Overflow Use Case Diagram">
     <br />

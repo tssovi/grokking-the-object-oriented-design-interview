@@ -62,7 +62,7 @@ Here are the top use cases of our system:
 Here is the use case diagram of LinkedIn:
 
 <p align="center">
-    <img src="/media-files/linkedin-use-case-diagram.png" alt="LinkedIn Use Case Diagram">
+    <img src="/media-files/linkedin-use-case-diagram.svg" alt="LinkedIn Use Case Diagram">
     <br />
     Use Case Diagram for LinkedIn
 </p>

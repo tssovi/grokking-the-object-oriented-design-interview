@@ -29,7 +29,7 @@
     <br />
     <a href="object-oriented-design-case-studies/design-stack-overflow.md"><b>Design Stack Overflow</b></a>
     <br />
-    <a href="object-oriented-design-case-studies/"><b>Design a Movie Ticket Booking System</b></a>
+    <a href="object-oriented-design-case-studies/design-a-movie-ticket-booking-system.md"><b>Design a Movie Ticket Booking System</b></a>
     <br />
     <a href="object-oriented-design-case-studies/design-an-atm.md"><b>Design an ATM</b></a>
     <br />

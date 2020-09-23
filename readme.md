@@ -45,7 +45,7 @@
     <br />
     <a href="object-oriented-design-case-studies/design-an-online-stock-brokerage-system.md"><b>Design an Online Stock Brokerage System</b></a>
     <br />
-    <a href="object-oriented-design-case-studies/"><b>Design a Car Rental System</b></a>
+    <a href="object-oriented-design-case-studies/design-a-car-rental-system.md"><b>Design a Car Rental System</b></a>
     <br />
     <a href="object-oriented-design-case-studies/"><b>Design LinkedIn</b></a>
     <br />

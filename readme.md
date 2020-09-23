@@ -64,9 +64,7 @@ I create this repository as extended version of [Grokking the Object Oriented De
     <a href="object-oriented-design-case-studies/design-facebook.md"><b>Design Facebook - a Social Network</b></a>
 </p>
 <hr />
-
 <h3 align="center">** Sources **</h3>
-
 <hr />
 <p align="center">
     <a href="https://www.educative.io/courses/grokking-the-object-oriented-design-interview"><b>Course Source: Grokking the Object Oriented Design Interview</b></a>

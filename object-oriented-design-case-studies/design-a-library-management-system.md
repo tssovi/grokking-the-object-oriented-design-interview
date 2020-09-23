@@ -14,7 +14,7 @@ A Library Management System is a software built to handle the primary housekeepi
 Library management systems also involve maintaining the database for entering new books and recording books that have been borrowed with their respective due dates.
 
 <p align="center">
-    <img src="/media-files/library-system.jpeg" alt="Library Management System">
+    <img src="/media-files/library-system.png" alt="Library Management System">
     <br />
     Library Management System
 </p>

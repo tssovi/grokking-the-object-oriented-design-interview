@@ -5,7 +5,7 @@
 
 * [System Requirements](#system-requirements)
 * [Use Case Diagram](#use-case-diagram)
-* [Class Diagrams](#class-diagrams)
+* [Class Diagram](#class-diagram)
 * [Activity Diagrams](#activity-diagrams)
 * [Code](#code)
 

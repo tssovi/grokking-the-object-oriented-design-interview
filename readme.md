@@ -65,10 +65,12 @@ I create this repository as extended version of [Grokking the Object Oriented De
 </p>
 <hr />
 
-### **Sources:**
+<h3 align="center">** Sources **</h3>
 
-**Course Source:** [Grokking the Object Oriented Design Interview](https://www.educative.io/courses/grokking-the-object-oriented-design-interview)
-
-**Banner Photo Source:** [Dribbble](https://dribbble.com)
-
+<hr />
+<p align="center">
+    <a href="https://www.educative.io/courses/grokking-the-object-oriented-design-interview"><b>Course Source: Grokking the Object Oriented Design Interview</b></a>
+    <br />
+    <a href="https://dribbble.com"><b>Banner Photo Source: Dribbble</b></a>
+</p>
 <hr />

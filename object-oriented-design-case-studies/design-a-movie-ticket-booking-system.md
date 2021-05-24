@@ -54,7 +54,7 @@ Here are the top use cases of the Movie Ticket Booking System:
 * **Assign Seat:** Customers will be shown a seat map to let them select seats for their booking.
 * **Refund payment:** Upon cancellation, customers will be refunded the payment amount as long as the cancellation occurs within the allowed time frame.
 
-Here is the use case diagram of LinkedIn:
+Here is the use case diagram of Movie Ticket Booking System:
 
 <p align="center">
     <img src="/media-files/mtbs-use-case-diagram.svg" alt="Movie Ticket Booking System Use Case Diagram">

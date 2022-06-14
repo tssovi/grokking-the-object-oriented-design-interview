@@ -216,11 +216,11 @@ class ParkingSpot(ABC):
 
     def assign_vehicle(self, vehicle):
         self.__vehicle = vehicle
-        free = False
+        self.__free = False
 
     def remove_vehicle(self):
         self.__vehicle = None
-        free = True
+        self.free = True
 
 
 class HandicappedSpot(ParkingSpot):

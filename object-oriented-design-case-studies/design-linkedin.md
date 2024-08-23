@@ -74,12 +74,12 @@ Here are the main classes of the LinkedIn system:
 * **Member:** This will be the main component of our system. Each member will have a profile which includes their Experiences, Education, Skills, Accomplishments, and Recommendations. Members will be connected to other members and they can follow companies and members. Members will also have suggestions to make connections with other members.
 * **Search:** Our system will support searching for other members and companies by their names, and jobs by their titles.
 * **Message:** Members can send messages to other members with text and media.
-* Post: Members can create posts containing text and media.
+* **Post:** Members can create posts containing text and media.
 * **Comment:** Members can add comments to posts as well as like them.
 * **Group:** Members can create and join groups.
 * **Company:** Company will store all the information about a company’s page.
 * **JobPosting:** Companies can create a job posting. This class will handle all information about a job.
-* Notification: Will take care of sending notifications to members.
+* **Notification:** Will take care of sending notifications to members.
 
 <p align="center">
     <img src="/media-files/linkedin-class-diagram.png" alt="LinkedIn Class Diagram">

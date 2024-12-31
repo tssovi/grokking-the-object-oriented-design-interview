@@ -494,23 +494,23 @@ class ParkingLot:
             else:
                 large_spot_count += 1
 
-        def is_full(self):
-            for key in self.__parking_floors:
-                if not self.__parking_floors.get(key).is_full():
-                    return False
-            return True
+    def is_full(self):
+        for key in self.__parking_floors:
+            if not self.__parking_floors.get(key).is_full():
+                return False
+        return True
 
-        def add_parking_floor(self, floor):
-            # store in database
-            None
+    def add_parking_floor(self, floor):
+        # store in database
+        None
 
-        def add_entrance_panel(self, entrance_panel):
-            # store in database
-            None
+    def add_entrance_panel(self, entrance_panel):
+        # store in database
+        None
 
-        def add_exit_panel(self,  exit_panel):
-            # store in database
-            None
+    def add_exit_panel(self,  exit_panel):
+        # store in database
+        None
 
 
 ```

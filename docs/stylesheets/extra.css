@@ -1,0 +1,230 @@
+/* Improved code block styling */
+.highlight {
+  border-radius: 4px;
+  margin: 1em 0;
+}
+
+/* Image centering and styling */
+.md-typeset img {
+  display: block;
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+.md-typeset .image-caption {
+  text-align: center;
+  font-style: italic;
+  margin-top: -1em;
+  margin-bottom: 1.5em;
+  color: var(--md-default-fg-color--light);
+}
+
+/* Table styling */
+.md-typeset table {
+  width: 100%;
+}
+
+/* Custom classes for diagrams */
+.uml-diagram {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom classes for code examples */
+.example-code {
+  margin: 2em 0;
+}
+
+.example-code h4 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  color: var(--md-primary-fg-color);
+}
+
+/* Make headings more prominent */
+.md-typeset h1 {
+  font-weight: 700;
+  color: var(--md-primary-fg-color);
+}
+
+.md-typeset h2 {
+  font-weight: 600;
+  color: var(--md-primary-fg-color);
+  border-bottom: 1px solid var(--md-primary-fg-color--light);
+  padding-bottom: 0.3em;
+}
+
+/* Improve admonition styling */
+.md-typeset .admonition {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Enhance the navigation sidebar */
+.md-nav__item .md-nav__link--active {
+  font-weight: bold;
+  color: var(--md-primary-fg-color);
+}
+
+/* Improve table of contents */
+.md-nav--secondary .md-nav__title {
+  font-size: 0.9rem;
+}
+
+/* Custom styling for Python examples */
+.language-python {
+  background-color: #f8f8f8;
+}
+
+/* Fix spacing and alignment for material icons */
+.material-icons {
+  vertical-align: middle;
+  margin-right: 0.2em;
+}
+
+/* Ensure material icons are visible */
+.md-icon {
+  display: inline-block !important;
+  margin-right: 0.2em;
+}
+
+/* Fix icon alignment in navigation */
+.md-nav__link .md-icon {
+  vertical-align: middle;
+}
+
+/* Ensure proper sizing for icons */
+.material-symbols-outlined {
+  font-size: 1.2em;
+  vertical-align: sub;
+}
+
+/* Fix for specific material-language-uml icon */
+:root [data-md-color-scheme] .md-icon.material-language-uml {
+  visibility: visible !important;
+  display: inline-block !important;
+}
+
+/* Custom Header Styling */
+.md-header {
+  background: linear-gradient(135deg, #2b3d63 0%, #1a2843 100%);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  height: max-content;
+  padding: 0.5rem 0;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.md-header:hover {
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+}
+
+.md-header__inner {
+  padding: 0 1rem;
+}
+
+.md-header__title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
+.md-header__topic span {
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+/*  */
+
+/* Animated underline for navigation tabs */
+.md-tabs__link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.md-tabs__link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #ffffff;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.md-tabs__link:hover::after {
+  visibility: visible;
+  width: 100%;
+}
+
+.md-tabs__item--active .md-tabs__link::after {
+  visibility: visible;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.md-tabs {
+  background-color: rgb(0, 0, 0);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.md-search__form {
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.md-search__form:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* make md-header__button md-icon visible only when the screen is less than 960px */
+@media (min-width: 960px) {
+  body > header > nav > label:nth-child(4) {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1220px) {
+  body > header > nav > label:nth-child(2) {
+    display: none !important;
+  }
+}
+
+/* hide elements on screens larger than 960px
+@media (min-width: 961px) {
+  .md-header__button {
+    display: none !important;
+  }
+} */
+
+/* Add Github button styling */
+.header-github-link {
+  margin-left: 1rem;
+}
+
+.header-github-link:before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='white' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
+    no-repeat;
+}
+
+/* Add responsive adjustments */
+@media screen and (max-width: 76.1875em) {
+  .md-header__title {
+    font-size: 0.9rem;
+  }
+
+  .md-header__topic span {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .md-header__topic span {
+    font-size: 0.85rem;
+  }
+}

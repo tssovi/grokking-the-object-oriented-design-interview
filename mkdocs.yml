@@ -1,0 +1,98 @@
+site_name: Grokking the Object Oriented Design Interview
+site_description: A comprehensive guide to object-oriented design interviews
+site_author: Original content from educative.io
+copyright: "Original content from educative.io"
+site_url: https://noblenihal.github.io/Grokking-the-Object-Oriented-Design-Interview
+
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: indigo
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - content.code.copy
+    - content.code.annotate
+  icon:
+    repo: fontawesome/brands/github
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      use_pygments: true
+      linenums: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - footnotes
+  - attr_list
+  - def_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search
+
+extra:
+  assets_dir: assets
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/extra.js
+
+nav:
+  - Home: index.md
+  - Object-Oriented Design and UML:
+      - Overview: oop-fundamentals/index.md
+      - Object Oriented Basics: oop-fundamentals/object-oriented-basics.md
+      - OO Analysis and Design: oop-fundamentals/object-oriented-analysis-and-design.md
+      - What is UML?: oop-fundamentals/what-is-uml.md
+      - Use Case Diagrams: oop-fundamentals/use-case-diagrams.md
+      - Class Diagram: oop-fundamentals/class-diagram.md
+      - Sequence Diagram: oop-fundamentals/sequence-diagram.md
+      - Activity Diagrams: oop-fundamentals/activity-diagrams.md
+  - Design Case Studies:
+      - Overview: case-studies/index.md
+      - Library Management System: case-studies/design-a-library-management-system.md
+      - Parking Lot: case-studies/design-a-parking-lot.md
+      - Amazon Online Shopping: case-studies/design-amazon-online-shopping-system.md
+      - Stack Overflow: case-studies/design-stack-overflow.md
+      - Movie Ticket Booking: case-studies/design-a-movie-ticket-booking-system.md
+      - ATM: case-studies/design-an-atm.md
+      - Airline Management: case-studies/design-an-airline-management-system.md
+      - Blackjack and Cards: case-studies/design-blackjack-and-a-deck-of-cards.md
+      - Hotel Management: case-studies/design-a-hotel-management-system.md
+      - Restaurant Management: case-studies/design-a-restaurant-management-system.md
+      - Chess: case-studies/design-chess.md
+      - Stock Brokerage: case-studies/design-an-online-stock-brokerage-system.md
+      - Car Rental: case-studies/design-a-car-rental-system.md
+      - LinkedIn: case-studies/design-linkedin.md
+      - Cricinfo: case-studies/design-cricinfo.md
+      - Facebook: case-studies/design-facebook.md
+  - About: about.md

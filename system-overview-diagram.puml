@@ -1,0 +1,232 @@
+@startuml System Overview - Design Patterns and Relationships
+
+title Object-Oriented Design Case Studies - System Overview
+
+skinparam packageStyle rectangle
+skinparam linetype polyline
+
+' ============================================
+' HIGH-LEVEL SYSTEM OVERVIEW
+' ============================================
+
+package "Account Management Systems" #LightBlue {
+    [Library Management\nSystem] as LMS
+    [Online Shopping\nSystem] as OSS
+    [Hotel Management\nSystem] as HMS
+}
+
+package "Booking & Reservation Systems" #LightGreen {
+    [Airline Management\nSystem] as AMS
+    [Movie Ticket Booking\nSystem] as MTBS
+    [Parking Lot\nSystem] as PLS
+}
+
+package "Financial Systems" #LightYellow {
+    [ATM System] as ATM
+    [Stock Brokerage\nSystem] as SBS
+}
+
+package "Game Systems" #LightCoral {
+    [Chess Game] as Chess
+    [Blackjack Game] as Blackjack
+}
+
+package "Social & Information Systems" #Lavender {
+    [Stack Overflow] as SO
+    [LinkedIn] as LI
+    [Facebook] as FB
+    [Cricinfo] as CI
+}
+
+package "Vehicle Management Systems" #LightPink {
+    [Car Rental\nSystem] as CRS
+    [Parking Lot\nSystem] as PLS2
+}
+
+package "Service Systems" #Wheat {
+    [Restaurant Management\nSystem] as RMS
+    [Hotel Management\nSystem] as HMS2
+}
+
+' ============================================
+' COMMON DESIGN PATTERNS
+' ============================================
+
+cloud "Common Design Patterns" as Patterns {
+    component [Singleton Pattern] as Singleton
+    component [Factory Pattern] as Factory
+    component [Strategy Pattern] as Strategy
+    component [Observer Pattern] as Observer
+    component [Command Pattern] as Command
+    component [State Pattern] as State
+    component [Composite Pattern] as Composite
+    component [Decorator Pattern] as Decorator
+}
+
+' ============================================
+' COMMON COMPONENTS
+' ============================================
+
+database "Common Components" as Common {
+    component [Account/User\nManagement] as Account
+    component [Payment\nProcessing] as Payment
+    component [Notification\nSystem] as Notification
+    component [Search\nFunctionality] as Search
+    component [Booking/Reservation\nEngine] as Booking
+}
+
+' ============================================
+' RELATIONSHIPS
+' ============================================
+
+' Singleton Pattern Usage
+PLS ..> Singleton : uses
+ATM ..> Singleton : uses
+
+' Factory Pattern Usage
+LMS ..> Factory : uses
+OSS ..> Factory : uses
+HMS ..> Factory : uses
+AMS ..> Factory : uses
+MTBS ..> Factory : uses
+Chess ..> Factory : uses
+
+' Strategy Pattern Usage
+Chess ..> Strategy : uses
+PLS ..> Strategy : uses
+
+' Observer Pattern Usage
+OSS ..> Observer : uses
+HMS ..> Observer : uses
+AMS ..> Observer : uses
+MTBS ..> Observer : uses
+SO ..> Observer : uses
+LI ..> Observer : uses
+FB ..> Observer : uses
+
+' Command Pattern Usage
+ATM ..> Command : uses
+Chess ..> Command : uses
+
+' State Pattern Usage
+OSS ..> State : uses
+AMS ..> State : uses
+MTBS ..> State : uses
+ATM ..> State : uses
+
+' Composite Pattern Usage
+OSS ..> Composite : uses
+AMS ..> Composite : uses
+
+' Common Components Usage
+LMS --> Account
+OSS --> Account
+HMS --> Account
+SO --> Account
+LI --> Account
+FB --> Account
+
+OSS --> Payment
+ATM --> Payment
+HMS --> Payment
+AMS --> Payment
+MTBS --> Payment
+CRS --> Payment
+
+AMS --> Notification
+MTBS --> Notification
+HMS --> Notification
+OSS --> Notification
+
+LMS --> Search
+OSS --> Search
+SO --> Search
+
+AMS --> Booking
+MTBS --> Booking
+HMS --> Booking
+CRS --> Booking
+
+' ============================================
+' NOTES
+' ============================================
+
+note right of Patterns
+  All systems implement
+  multiple design patterns
+  for flexibility and
+  maintainability
+end note
+
+note bottom of Common
+  Reusable components
+  across different systems
+  promote code reuse and
+  consistency
+end note
+
+note left of LMS
+  <b>Key Features:</b>
+  • Book checkout/return
+  • Member management
+  • Fine calculation
+  • Reservation system
+end note
+
+note left of PLS
+  <b>Key Features:</b>
+  • Multi-floor parking
+  • Spot allocation
+  • Ticket generation
+  • Payment processing
+end note
+
+note right of OSS
+  <b>Key Features:</b>
+  • Shopping cart
+  • Order management
+  • Product catalog
+  • Shipment tracking
+end note
+
+note right of Chess
+  <b>Key Features:</b>
+  • Move validation
+  • Check detection
+  • Turn management
+  • Piece strategies
+end note
+
+note bottom of ATM
+  <b>Key Features:</b>
+  • Multiple transactions
+  • Account management
+  • Card authentication
+  • Cash handling
+end note
+
+note bottom of HMS
+  <b>Key Features:</b>
+  • Room booking
+  • Multi-location support
+  • Guest management
+  • Service tracking
+end note
+
+note bottom of AMS
+  <b>Key Features:</b>
+  • Flight scheduling
+  • Seat reservation
+  • Itinerary management
+  • Passenger tracking
+end note
+
+note bottom of MTBS
+  <b>Key Features:</b>
+  • Show scheduling
+  • Seat selection
+  • Real-time availability
+  • Booking confirmation
+end note
+
+@enduml

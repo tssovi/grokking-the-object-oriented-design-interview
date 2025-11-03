@@ -1,0 +1,795 @@
+@startuml Object-Oriented Design Case Studies - Comprehensive Object Diagram
+
+title Object-Oriented Design Case Studies - Comprehensive Object Diagram
+skinparam linetype ortho
+skinparam packageStyle rectangle
+
+' ============================================
+' LIBRARY MANAGEMENT SYSTEM
+' ============================================
+package "Library Management System" #LightBlue {
+    abstract class Account {
+        - id: string
+        - password: string
+        - status: AccountStatus
+        - person: Person
+        + resetPassword()
+    }
+    
+    class Librarian {
+        + addBookItem(bookItem)
+        + blockMember(member)
+        + unBlockMember(member)
+    }
+    
+    class Member {
+        - dateOfMembership: date
+        - totalBooksCheckedout: int
+        + reserveBookItem(bookItem)
+        + checkoutBookItem(bookItem)
+        + returnBookItem(bookItem)
+        + renewBookItem(bookItem)
+        + checkForFine(barcode)
+    }
+    
+    abstract class Book {
+        - ISBN: string
+        - title: string
+        - subject: string
+        - publisher: string
+        - language: string
+        - numberOfPages: int
+        - authors: list
+    }
+    
+    class BookItem {
+        - barcode: string
+        - isReferenceOnly: boolean
+        - borrowed: date
+        - dueDate: date
+        - price: double
+        - format: BookFormat
+        - status: BookStatus
+        - dateOfPurchase: date
+        - publicationDate: date
+        - placedAt: Rack
+        + checkout(memberId)
+    }
+    
+    class Rack {
+        - number: int
+        - locationIdentifier: string
+    }
+    
+    class BookReservation {
+        - creationDate: date
+        - status: ReservationStatus
+        - bookItemBarcode: string
+        - memberId: string
+        + fetchReservationDetails(barcode)
+    }
+    
+    class BookLending {
+        - creationDate: date
+        - dueDate: date
+        - returnDate: date
+        - bookItemBarcode: string
+        - memberId: string
+        + lendBook(barcode, memberId)
+        + fetchLendingDetails(barcode)
+    }
+    
+    class Fine {
+        - creationDate: date
+        - bookItemBarcode: string
+        - memberId: string
+        + collectFine(memberId, days)
+    }
+    
+    Account <|-- Librarian
+    Account <|-- Member
+    Book <|-- BookItem
+    BookItem --> Rack
+    Member --> BookReservation
+    Member --> BookLending
+    Member --> Fine
+}
+
+' ============================================
+' PARKING LOT SYSTEM
+' ============================================
+package "Parking Lot System" #LightGreen {
+    class ParkingLot {
+        - name: string
+        - address: string
+        - parkingRate: ParkingRate
+        - compactSpotCount: int
+        - largeSpotCount: int
+        - motorbikeSpotCount: int
+        - electricSpotCount: int
+        - entrancePanels: map
+        - exitPanels: map
+        - parkingFloors: map
+        - activeTickets: map
+        + getNewParkingTicket(vehicle)
+        + isFull(type)
+        + incrementSpotCount(type)
+        + addParkingFloor(floor)
+        + addEntrancePanel(panel)
+        + addExitPanel(panel)
+    }
+    
+    class ParkingFloor {
+        - name: string
+        - parkingSpots: map
+        + addParkingSpot(spot)
+        + assignVehicleToSpot(vehicle, spot)
+        + freeSpot(spot)
+    }
+    
+    abstract class ParkingSpot {
+        - number: int
+        - free: boolean
+        - vehicle: Vehicle
+        - parkingSpotType: ParkingSpotType
+        + isFree(): boolean
+        + assignVehicle(vehicle)
+        + removeVehicle()
+    }
+    
+    class CompactSpot
+    class LargeSpot
+    class MotorbikeSpot
+    class ElectricSpot
+    
+    abstract class Vehicle {
+        - licenseNumber: string
+        - type: VehicleType
+        - ticket: ParkingTicket
+        + assignTicket(ticket)
+    }
+    
+    class Car
+    class Van
+    class Truck
+    class Motorbike
+    class ElectricCar
+    
+    class ParkingTicket {
+        - ticketNumber: string
+        - issuedAt: datetime
+        - payedAt: datetime
+        - payedAmount: double
+        - status: ParkingTicketStatus
+    }
+    
+    class EntrancePanel {
+        - id: string
+        + getTicket()
+    }
+    
+    class ExitPanel {
+        - id: string
+        + processPayment(ticket)
+    }
+    
+    ParkingLot "1" *-- "many" ParkingFloor
+    ParkingFloor "1" *-- "many" ParkingSpot
+    ParkingSpot <|-- CompactSpot
+    ParkingSpot <|-- LargeSpot
+    ParkingSpot <|-- MotorbikeSpot
+    ParkingSpot <|-- ElectricSpot
+    Vehicle <|-- Car
+    Vehicle <|-- Van
+    Vehicle <|-- Truck
+    Vehicle <|-- Motorbike
+    Vehicle <|-- ElectricCar
+    ParkingSpot --> Vehicle
+    Vehicle --> ParkingTicket
+    ParkingLot --> EntrancePanel
+    ParkingLot --> ExitPanel
+}
+
+' ============================================
+' ONLINE SHOPPING SYSTEM
+' ============================================
+package "Online Shopping System" #LightYellow {
+    class ShoppingAccount {
+        - userName: string
+        - password: string
+        - name: string
+        - email: string
+        - phone: string
+        - shippingAddress: Address
+        - status: AccountStatus
+        - creditCards: list
+        - bankAccounts: list
+        + addProduct(product)
+        + addProductReview(review)
+        + resetPassword()
+    }
+    
+    abstract class Customer {
+        - cart: ShoppingCart
+        - order: Order
+        + getShoppingCart()
+        + addItemToCart(item)
+        + removeItemFromCart(item)
+    }
+    
+    class Guest {
+        + registerAccount()
+    }
+    
+    class ShoppingMember {
+        - account: ShoppingAccount
+        + placeOrder(order)
+    }
+    
+    class ShoppingCart {
+        - items: list
+        + addItem(item)
+        + removeItem(item)
+        + updateItemQuantity(item, quantity)
+        + getItems()
+        + checkout()
+    }
+    
+    class Item {
+        - productId: string
+        - quantity: int
+        - price: double
+        + updateQuantity(quantity)
+    }
+    
+    class Order {
+        - orderNumber: string
+        - status: OrderStatus
+        - orderDate: date
+        - orderLog: list
+        + sendForShipment()
+        + makePayment(payment)
+        + addOrderLog(log)
+    }
+    
+    class OrderLog {
+        - orderNumber: string
+        - creationDate: date
+        - status: OrderStatus
+    }
+    
+    class Product {
+        - productId: string
+        - name: string
+        - description: string
+        - price: double
+        - category: ProductCategory
+        - availableItemCount: int
+        - seller: ShoppingAccount
+    }
+    
+    class Shipment {
+        - shipmentNumber: string
+        - shipmentDate: date
+        - estimatedArrival: date
+        - shipmentMethod: string
+        + addShipmentLog(log)
+    }
+    
+    Customer <|-- Guest
+    Customer <|-- ShoppingMember
+    ShoppingMember --> ShoppingAccount
+    Customer --> ShoppingCart
+    ShoppingCart "1" *-- "many" Item
+    Item --> Product
+    Customer --> Order
+    Order "1" *-- "many" OrderLog
+    Order --> Shipment
+}
+
+' ============================================
+' CHESS GAME
+' ============================================
+package "Chess Game System" #LightCoral {
+    class ChessGame {
+        - finished: boolean
+        - board: ChessBoard
+        - renderer: InputRender
+        - status: GameStatus
+        + run()
+        + tryMove(command)
+        + parseCommand()
+        + getGameState()
+    }
+    
+    class ChessBoard {
+        - pieces: list
+        - size: int
+        - whiteKingPosition: Position
+        - blackKingPosition: Position
+        + getPiece(position)
+        + executeMove(command)
+    }
+    
+    abstract class Piece {
+        - position: Position
+        - color: Color
+        - killed: boolean
+        + canMove(board, start, end): boolean
+        + getMoveablePositions(board)
+        + getThreatenedPositions(board)
+    }
+    
+    class King {
+        - castlingDone: boolean
+        + canMove(board, start, end)
+    }
+    
+    class Queen {
+        + canMove(board, start, end)
+    }
+    
+    class Rook {
+        + canMove(board, start, end)
+    }
+    
+    class Bishop {
+        + canMove(board, start, end)
+    }
+    
+    class Knight {
+        + canMove(board, start, end)
+    }
+    
+    class Pawn {
+        + canMove(board, start, end)
+    }
+    
+    class Position {
+        - x: int
+        - y: int
+    }
+    
+    class MoveCommand {
+        - src: Position
+        - dst: Position
+        + fromString(input): MoveCommand
+    }
+    
+    class Player {
+        - person: Person
+        - whiteSide: boolean
+        - humanPlayer: boolean
+    }
+    
+    ChessGame --> ChessBoard
+    ChessBoard "1" *-- "many" Piece
+    Piece <|-- King
+    Piece <|-- Queen
+    Piece <|-- Rook
+    Piece <|-- Bishop
+    Piece <|-- Knight
+    Piece <|-- Pawn
+    Piece --> Position
+    ChessGame --> MoveCommand
+    ChessGame --> Player
+}
+
+' ============================================
+' ATM SYSTEM
+' ============================================
+package "ATM System" #Lavender {
+    class ATM {
+        - atmId: string
+        - location: Address
+        - cashDispenser: CashDispenser
+        - keypad: Keypad
+        - screen: Screen
+        - printer: Printer
+        - checkReader: CheckReader
+        - cashDeposit: CashDeposit
+        + authenticateUser()
+        + makeTransaction(customer, transaction)
+    }
+    
+    class Bank {
+        - name: string
+        - bankCode: string
+        + getBankCode(): string
+        + addATM(atm)
+    }
+    
+    class BankAccount {
+        - accountNumber: string
+        - totalBalance: double
+        - availableBalance: double
+        + getAvailableBalance(): double
+    }
+    
+    class SavingsAccount {
+        - withdrawLimit: double
+    }
+    
+    class CheckingAccount {
+        - debitCardNumber: string
+    }
+    
+    class Card {
+        - cardNumber: string
+        - customerName: string
+        - cardExpiry: date
+        - pin: int
+    }
+    
+    abstract class Transaction {
+        - transactionId: string
+        - creationDate: date
+        - status: TransactionStatus
+        + makeTransaction()
+    }
+    
+    class BalanceInquiry {
+        - accountId: string
+        + getAccountId(): string
+    }
+    
+    class Deposit {
+        - amount: double
+        + getAmount(): double
+    }
+    
+    class Withdraw {
+        - amount: double
+        + getAmount(): double
+    }
+    
+    class Transfer {
+        - destinationAccountNumber: string
+        + getDestinationAccount(): string
+    }
+    
+    class Customer {
+        - name: string
+        - address: string
+        - email: string
+        - phone: string
+        - status: CustomerStatus
+        - card: Card
+        - account: BankAccount
+        + makeTransaction(transaction)
+        + getAccount(): BankAccount
+    }
+    
+    ATM --> Bank
+    Bank "1" *-- "many" BankAccount
+    BankAccount <|-- SavingsAccount
+    BankAccount <|-- CheckingAccount
+    Customer --> Card
+    Customer --> BankAccount
+    Transaction <|-- BalanceInquiry
+    Transaction <|-- Deposit
+    Transaction <|-- Withdraw
+    Transaction <|-- Transfer
+    ATM --> Transaction
+    Customer --> Transaction
+}
+
+' ============================================
+' HOTEL MANAGEMENT SYSTEM
+' ============================================
+package "Hotel Management System" #LightPink {
+    class Hotel {
+        - name: string
+        - locations: list
+        + addLocation(location)
+    }
+    
+    class HotelLocation {
+        - name: string
+        - address: Address
+        - rooms: list
+        + getRooms(): list
+    }
+    
+    abstract class Room {
+        - roomNumber: string
+        - roomStyle: RoomStyle
+        - status: RoomStatus
+        - bookingPrice: double
+        - isSmoking: boolean
+        - keys: list
+        + isRoomAvailable(): boolean
+        + checkIn()
+        + checkOut()
+    }
+    
+    class StandardRoom
+    class DeluxeRoom
+    class FamilySuite
+    class BusinessSuite
+    
+    class RoomBooking {
+        - reservationNumber: string
+        - startDate: date
+        - durationInDays: int
+        - bookingStatus: BookingStatus
+        - checkinDate: date
+        - checkoutDate: date
+        - guestId: int
+        - room: Room
+        - invoice: Invoice
+        + fetchDetails(reservationNumber)
+    }
+    
+    class RoomCharge {
+        - issueAt: date
+        - addToInvoice: boolean
+    }
+    
+    class Amenity {
+        - name: string
+        - description: string
+    }
+    
+    class KitchenService {
+        - description: string
+    }
+    
+    class HotelGuest {
+        - guestId: int
+        - account: HotelAccount
+        + searchRoomBooking(reservationNumber)
+    }
+    
+    class Receptionist {
+        + createBooking()
+        + cancelBooking()
+    }
+    
+    Hotel "1" *-- "many" HotelLocation
+    HotelLocation "1" *-- "many" Room
+    Room <|-- StandardRoom
+    Room <|-- DeluxeRoom
+    Room <|-- FamilySuite
+    Room <|-- BusinessSuite
+    RoomBooking --> Room
+    RoomBooking --> HotelGuest
+    Room --> Amenity
+    Room --> KitchenService
+    RoomBooking --> RoomCharge
+    Receptionist --> RoomBooking
+}
+
+' ============================================
+' AIRLINE MANAGEMENT SYSTEM
+' ============================================
+package "Airline Management System" #LightCyan {
+    class Airline {
+        - name: string
+        - code: string
+        + addAircraft(aircraft)
+    }
+    
+    class Aircraft {
+        - name: string
+        - model: string
+        - manufacturingYear: int
+        - seats: list
+        + getSeats(): list
+    }
+    
+    class Seat {
+        - seatNumber: string
+        - type: SeatType
+        - seatClass: SeatClass
+        + getSeatNumber(): string
+    }
+    
+    class Flight {
+        - flightNumber: string
+        - departure: Airport
+        - arrival: Airport
+        - durationInMinutes: int
+    }
+    
+    class FlightInstance {
+        - departureTime: datetime
+        - gate: string
+        - status: FlightStatus
+        - aircraft: Aircraft
+        + cancel()
+        + updateStatus(status)
+    }
+    
+    class FlightReservation {
+        - reservationNumber: string
+        - flightInstance: FlightInstance
+        - seatMap: map
+        - creationDate: date
+        - status: ReservationStatus
+        + fetchReservationDetails(reservationNumber)
+        + getPassengers(): list
+    }
+    
+    class Itinerary {
+        - startingAirport: Airport
+        - finalAirport: Airport
+        - creationDate: date
+        - reservations: list
+        + makeReservation()
+        + makePayment()
+    }
+    
+    class Airport {
+        - name: string
+        - address: Address
+        - code: string
+        + getFlights(): list
+    }
+    
+    class Passenger {
+        - name: string
+        - passportNumber: string
+        - dateOfBirth: date
+        + getPassportNumber(): string
+    }
+    
+    Airline "1" *-- "many" Aircraft
+    Aircraft "1" *-- "many" Seat
+    Flight --> Airport
+    FlightInstance --> Flight
+    FlightInstance --> Aircraft
+    FlightReservation --> FlightInstance
+    FlightReservation --> Seat
+    FlightReservation --> Passenger
+    Itinerary "1" *-- "many" FlightReservation
+}
+
+' ============================================
+' MOVIE TICKET BOOKING SYSTEM
+' ============================================
+package "Movie Ticket Booking System" #Wheat {
+    class Cinema {
+        - name: string
+        - totalCinemaHalls: int
+        - location: Address
+        - halls: list
+    }
+    
+    class CinemaHall {
+        - name: string
+        - totalSeats: int
+        - seats: list
+        - shows: list
+    }
+    
+    class CinemaHallSeat {
+        - seatId: string
+        - seatType: SeatType
+        - seatNumber: int
+        - rowNumber: int
+    }
+    
+    class Show {
+        - showId: string
+        - createdOn: date
+        - startTime: datetime
+        - endTime: datetime
+        - hall: CinemaHall
+        - movie: Movie
+        - seats: list
+    }
+    
+    class Movie {
+        - title: string
+        - description: string
+        - durationInMins: int
+        - language: string
+        - releaseDate: date
+        - country: string
+        - genre: string
+        - shows: list
+    }
+    
+    class MovieBooking {
+        - bookingNumber: string
+        - numberOfSeats: int
+        - createdOn: date
+        - status: BookingStatus
+        - show: Show
+        - seats: list
+        - payment: Payment
+        + makePayment(payment)
+    }
+    
+    class ShowSeat {
+        - status: ShowSeatStatus
+        - price: double
+        - seat: CinemaHallSeat
+        - show: Show
+        - booking: MovieBooking
+    }
+    
+    class Payment {
+        - amount: double
+        - createdOn: date
+        - transactionId: string
+        - status: PaymentStatus
+    }
+    
+    Cinema "1" *-- "many" CinemaHall
+    CinemaHall "1" *-- "many" CinemaHallSeat
+    CinemaHall "1" *-- "many" Show
+    Show --> Movie
+    Show "1" *-- "many" ShowSeat
+    ShowSeat --> CinemaHallSeat
+    MovieBooking --> Show
+    MovieBooking "1" *-- "many" ShowSeat
+    MovieBooking --> Payment
+}
+
+' ============================================
+' COMMON ELEMENTS
+' ============================================
+package "Common Elements" #WhiteSmoke {
+    class Person {
+        - name: string
+        - address: Address
+        - email: string
+        - phone: string
+    }
+    
+    class Address {
+        - streetAddress: string
+        - city: string
+        - state: string
+        - zipCode: string
+        - country: string
+    }
+    
+    enum AccountStatus {
+        ACTIVE
+        CLOSED
+        CANCELED
+        BLACKLISTED
+        BLOCKED
+    }
+    
+    enum PaymentStatus {
+        UNPAID
+        PENDING
+        COMPLETED
+        FAILED
+        DECLINED
+        CANCELLED
+        REFUNDED
+    }
+    
+    Person --> Address
+}
+
+note right of ParkingLot
+  Singleton Pattern:
+  Only one instance exists
+  in the system
+end note
+
+note right of ChessGame
+  Strategy Pattern:
+  Different pieces have
+  different move strategies
+end note
+
+note right of Transaction
+  Command Pattern:
+  Each transaction type
+  encapsulates an action
+end note
+
+note right of Customer
+  Composite Pattern:
+  Guest and Member are
+  different customer types
+end note
+
+@enduml

@@ -1,99 +1,212 @@
-# ✈️ Airline Management System (Java)
+# Airline Management System - Java Implementation
 
-A **Java implementation** of the *Grokking the Object Oriented Design Interview* problem:
-**Airline Management System**, fully object-oriented and modularized.
+A comprehensive object-oriented design implementation of an Airline Management System in Java.
 
----
+## Overview
 
-## 🧩 Core OOP Concepts
+This system manages all operations of an airline including flight scheduling, ticket reservations, flight cancellations, customer support, and staff management.
 
-This project demonstrates:
+## Features
 
-* **Encapsulation** → all attributes are private.
-* **Abstraction** → key entities like `Account`, `Person`, and `Flight`.
-* **Inheritance** → `Seat → FlightSeat`, `Person → Customer`.
-* **Composition** → `Airport` has `Address`; `Flight` has `Aircraft`.
-* **Modularity** → Organized packages and separation of concerns.
+- **Flight Search**: Search for flights by source/destination airports and date
+- **Reservations**: Create, modify, and cancel flight reservations
+- **Multi-passenger Support**: Book tickets for multiple passengers under one itinerary
+- **Seat Assignment**: Assign seats to passengers with different seat classes
+- **Payment Processing**: Support for multiple payment methods (Credit Card, Cash)
+- **Staff Management**: Assign pilots and crew members to flights
+- **Notifications**: Email and SMS notifications for reservations and flight updates
+- **Flight Management**: Admin can add flights, aircraft, and manage schedules
 
----
+## System Architecture
 
-## 🏗️ Class Overview
-
-| Component                                    | Description                                                |
-| -------------------------------------------- | ---------------------------------------------------------- |
-| `Airport`                                    | Represents airports and their associated flights.          |
-| `Aircraft`                                   | Contains aircraft details and seating.                     |
-| `Seat` / `FlightSeat`                        | Defines seat type and class, including fare.               |
-| `FlightSchedule`                             | Handles flights, schedules, reservations, and itineraries. |
-| `Account`, `Person`, `Customer`, `Passenger` | Handles users, login info, and travel identities.          |
-| `Constants`                                  | Central enums and the `Address` class.                     |
-| `Main`                                       | Demo class that runs the system with sample data.          |
-
----
-
-## 💡 Example Run
-
-```bash
-javac com/airline/*.java
-java com.airline.Main
-```
-
-**Expected Output:**
+### Package Structure
 
 ```
-Customer Jane Doe booked flight com.airline.FlightSchedule$Flight@5b2133b1 from com.airline.Airport@2b193f2d to com.airline.Airport@355da254
-Flight instance departs at com.airline.FlightSchedule$FlightInstance@6acbcfc0 with status SCHEDULED
-Reservation created successfully with ID: RSV001
+java/
+├── enums/
+│   ├── AccountStatus.java
+│   ├── FlightStatus.java
+│   ├── PaymentStatus.java
+│   ├── ReservationStatus.java
+│   ├── SeatClass.java
+│   └── SeatType.java
+├── models/
+│   ├── Account.java
+│   ├── Address.java
+│   ├── Admin.java
+│   ├── Aircraft.java
+│   ├── Airline.java
+│   ├── Airport.java
+│   ├── CashPayment.java
+│   ├── CreditCardPayment.java
+│   ├── Crew.java
+│   ├── Customer.java
+│   ├── CustomSchedule.java
+│   ├── EmailNotification.java
+│   ├── Flight.java
+│   ├── FlightInstance.java
+│   ├── FlightReservation.java
+│   ├── FlightSeat.java
+│   ├── FrontDeskOfficer.java
+│   ├── Itinerary.java
+│   ├── Notification.java
+│   ├── Passenger.java
+│   ├── Payment.java
+│   ├── Person.java
+│   ├── Pilot.java
+│   ├── Seat.java
+│   ├── SMSNotification.java
+│   └── WeeklySchedule.java
+└── services/
+    ├── FlightSearch.java
+    └── ReservationService.java
 ```
 
-*(Note: Object memory addresses will differ when you run it.)*
+## Core Classes
 
----
+### Enums
 
-## 🧠 Example Code (from Main.java)
+- **FlightStatus**: ACTIVE, SCHEDULED, DELAYED, DEPARTED, LANDED, IN_AIR, ARRIVED, CANCELLED, DIVERTED, UNKNOWN
+- **PaymentStatus**: UNPAID, PENDING, COMPLETED, FILLED, DECLINED, CANCELLED, ABANDONED, SETTLING, SETTLED, REFUNDED
+- **ReservationStatus**: REQUESTED, PENDING, CONFIRMED, CHECKED_IN, CANCELLED, ABANDONED
+- **SeatClass**: ECONOMY, ECONOMY_PLUS, PREFERRED_ECONOMY, BUSINESS, FIRST_CLASS
+- **SeatType**: REGULAR, ACCESSIBLE, EMERGENCY_EXIT, EXTRA_LEG_ROOM
+- **AccountStatus**: ACTIVE, CLOSED, CANCELED, BLACKLISTED, BLOCKED
+
+### Main Entities
+
+#### Airline
+Represents the airline organization with name, code, aircraft fleet, and flights.
+
+#### Airport
+Represents an airport with name, address, unique code, and associated flights.
+
+#### Aircraft
+Represents an aircraft with model, manufacturing year, and seat configuration.
+
+#### Flight
+Represents a flight route with flight number, departure/arrival airports, duration, and schedules.
+
+#### FlightInstance
+Represents a specific occurrence of a flight with departure time, gate, status, assigned aircraft, pilots, and crew.
+
+#### FlightReservation
+Manages reservations with reservation number, passenger-seat mapping, status, and payment.
+
+#### Itinerary
+Represents a multi-flight journey with multiple reservations.
+
+### People
+
+- **Person** (Abstract): Base class for all people in the system
+- **Customer**: Can search flights, make reservations, and manage itineraries
+- **Admin**: Can add aircraft, flights, schedules, and assign crew
+- **FrontDeskOfficer**: Can create and cancel reservations
+- **Pilot**: Has license number and assigned flights
+- **Crew**: Has assigned flights
+- **Passenger**: Represents a passenger with passport details
+
+### Payment
+
+- **Payment** (Abstract): Base payment class
+- **CreditCardPayment**: Credit card payment implementation
+- **CashPayment**: Cash payment implementation
+
+### Notifications
+
+- **Notification** (Abstract): Base notification class
+- **EmailNotification**: Email notification implementation
+- **SMSNotification**: SMS notification implementation
+
+## Key Design Patterns
+
+1. **Inheritance**: Person hierarchy, Payment hierarchy, Notification hierarchy
+2. **Composition**: FlightInstance contains Aircraft, Seats, Pilots, and Crew
+3. **Encapsulation**: Private fields with public getters/setters
+4. **Abstraction**: Abstract classes for Person, Payment, and Notification
+
+## Usage Example
 
 ```java
-Constants.Address jfkAddr = new Constants.Address("JFK Rd", "New York", "NY", "10001", "USA");
-Airport jfk = new Airport("John F. Kennedy International", jfkAddr, "JFK");
+// Create an airport
+Address airportAddress = new Address("123 Airport Rd", "New York", "NY", "10001", "USA");
+Airport jfk = new Airport("John F Kennedy International", airportAddress, "JFK");
 
-Aircraft boeing737 = new Aircraft("Boeing 737", "MAX-8", 2018);
-FlightSchedule.Flight flight = new FlightSchedule.Flight("AA101", jfk, lax, 360);
+// Create an aircraft
+Aircraft boeing747 = new Aircraft("Boeing 747", "747-400", 2010);
+
+// Add seats to aircraft
+boeing747.addSeat(new Seat("1A", SeatType.REGULAR, SeatClass.FIRST_CLASS));
+boeing747.addSeat(new Seat("2A", SeatType.REGULAR, SeatClass.BUSINESS));
+
+// Create a flight
+Flight flight = new Flight("BA212", jfk, lhr, 420); // 7 hours
+
+// Create a flight instance
+FlightInstance flightInstance = new FlightInstance(
+    flight,
+    LocalDateTime.of(2024, 12, 25, 10, 0),
+    "A1",
+    FlightStatus.SCHEDULED,
+    boeing747
+);
+
+// Create a customer
+Account account = new Account("customer1", "password123");
+Address customerAddress = new Address("456 Main St", "Boston", "MA", "02101", "USA");
+Customer customer = new Customer("John Doe", customerAddress, "john@email.com", 
+                                "555-1234", account, "FF123456");
+
+// Search for flights
+FlightSearch searchService = new FlightSearch();
+List<FlightInstance> flights = searchService.searchFlights(jfk, lhr, LocalDate.of(2024, 12, 25));
+
+// Create a reservation
+ReservationService reservationService = new ReservationService();
+FlightReservation reservation = reservationService.createReservation(customer, flightInstance);
+
+// Add passenger and assign seat
+Passenger passenger = new Passenger("John Doe", "P123456", new Date());
+FlightSeat seat = flightInstance.getAvailableSeats().get(0);
+reservationService.assignSeatsToReservation(reservation, passenger, seat);
+
+// Process payment
+Payment payment = new CreditCardPayment(
+    reservation.calculateTotalFare(),
+    "TXN123",
+    "4111111111111111",
+    "John Doe",
+    "12/25",
+    "123"
+);
+
+// Confirm reservation
+reservationService.confirmReservation(reservation, payment);
 ```
 
-You can extend this design with:
+## System Requirements Covered
 
-* `Payment` and `Billing` classes
-* `FlightSearch` functionality
-* `Admin` and `Crew` subclasses under `Person`
+1. ✅ Search for flights by date and source/destination airport
+2. ✅ Reserve tickets and build multi-flight itineraries
+3. ✅ Check flight schedules and details
+4. ✅ Multiple passengers per reservation
+5. ✅ Admin can add aircraft, flights, and schedules
+6. ✅ Cancel reservations and itineraries
+7. ✅ Assign pilots and crew to flights
+8. ✅ Handle payments for reservations
+9. ✅ Send notifications for reservations and flight updates
 
----
+## Future Enhancements
 
-## 🧰 Requirements
+- Database integration for persistence
+- RESTful API layer
+- Web/mobile UI
+- Real-time flight tracking
+- Loyalty program management
+- Baggage tracking
+- Check-in system
+- Reporting and analytics
 
-* Java 17 or later
-* Basic understanding of OOP and Java syntax
+## License
 
----
-
-## 📦 Folder Structure
-
-```
-com/
- └── airline/
-     ├── Account.java
-     ├── Aircraft.java
-     ├── Airport.java
-     ├── Constants.java
-     ├── FlightSchedule.java
-     ├── Main.java
-     ├── Seat.java
-```
-
----
-
-## 🧑‍💻 Author
-
-**Converted and commented by:** ChatGPT
-**Based on:** *Grokking the Object Oriented Design Interview* (Python examples)
-
----
+This is an educational implementation for learning object-oriented design principles.
